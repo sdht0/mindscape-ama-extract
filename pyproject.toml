@@ -10,6 +10,7 @@ dependencies = [
     "openai>=1.93",
     "numpy>=2.3",
     "python-dotenv>=1.1",
+    "baml-py==0.90.2",
 ]
 
 [build-system]

@@ -31,8 +31,11 @@ echo OPENAI_API_KEY="sk-..." > .env
 ## Usage
 
 ```bash
+rm -f ama.txt *.json qa.*
+
 cat ./raw.txt | tr '\n' '-' | sed -r -e 's/-+[0-9\:\.]+ (S.?|Sean Carroll): / /g' > ./ama.txt
-# Best to remove the intro and outro from the raw transcript manually.
+# Remove intro and outro from the raw transcript manually.
+
 uv run python src/mindscape-ama-format/prepare_questions.py \
    -q ./questions.txt -o ./questions.json
 uv run python src/mindscape-ama-format/extract_qa.py \

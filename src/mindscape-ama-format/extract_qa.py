@@ -79,7 +79,7 @@ def main() -> None:
             )
             question = questions[index]
             found_question = False
-            for chunk_size in [5000, 7000, 8000, 10000]:
+            for chunk_size in [5000, 7000, 8000, 10000, 12000]:
                 chunk = transcript[prev_answer_index : prev_answer_index + chunk_size]
                 snippets = b.LocateSnippets(question=question, chunk=chunk)
                 data = {
